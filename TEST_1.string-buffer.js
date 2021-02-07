@@ -6,10 +6,10 @@ for(i=1;i<100;i++){
     string = "";
     
     if(i%3===0){
-        string +=" Open ";
+        string +="Open";
     }
     if(i%7===0){
-        string += " Source ";
+        string += "Source";
     }
 
     if(string.length>3)
