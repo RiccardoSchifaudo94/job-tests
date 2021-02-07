@@ -23,42 +23,44 @@ function sum_list_string(string_list){
     //console.log(sum);
     return sum;
 }
+
+//helpers functions 
 function isFloat(n){
     return Number(n) === n && n % 1 !== 0;
 }
 function notNull(n){
     return n !== null;
 }
+
+//init iteration function
 sum_list_string(list);
 
+//reset sum var
 sum = 0;
 
 // ** =======    TEST 4 - RECURSIVE FUNCTION  =======    **//
 // var conta = 0;
 function sum_list_string_recursive(string_list){
-    //console.log("recursion ="+conta);
+    //until array is not empty recall recursive function
     if(string_list.length>0){
-        //console.log("enter in recursion");
-        //console.log("string list previous filtering");
-        //console.log(string_list);
+        //enter in recursion;
+        //string list previous filtering;
         string_list = string_list.filter(notNull);
-        //console.log("string list after filtering null elements");
-        //console.log(string_list);
+        //string list after filtering null elements;
         string_list[string_list.length-1] = Number(string_list[string_list.length-1]);
-        //console.log("conversion in number");
-        //console.log(string_list[string_list.length-1]);
+        //conversion in number;
         if(!isNaN(string_list[string_list.length-1]))
             if(!isFloat(string_list[string_list.length-1]))
                 sum += string_list[string_list.length-1];
-                //console.log("total sum = ");
-                //console.log(sum);
-                //conta++;  
+                //disabled - conta++;  
+                //remove last array element just added to sum vars after check controls
                 string_list.pop();
+                //recall recursive function with same array reduced of removed last element
                 sum_list_string_recursive(string_list);
              
     }
-    //console.log("sum result of recursive function");
+    //return sum result of recursive function
     return sum;
 }
-
+//init recursive function
 sum_list_string_recursive(list);
