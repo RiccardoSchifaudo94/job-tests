@@ -35,7 +35,7 @@ function verify(guess_number){
                         }
                         else if(guess_number<0)
                                 console.log("guess number is negative = "+guess_number);
-                        else if(guess_number>0)
+                        else if(guess_number>max)
                                 console.log("guess number is out of range, it must be below of "+max);
                                 
                     }
