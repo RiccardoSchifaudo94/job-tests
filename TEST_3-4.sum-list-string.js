@@ -3,35 +3,28 @@ var list = ["23","test",null,"34",56, 22.7,"hello",12,"ciao",78,null,1,true,"cal
 var i;
 var sum = 0;
 function sum_list_string(string_list){
-
     var list = string_list.filter(notNull);
-
     for(i=0;i<list.length;i++){
-        
         //console.log("before conversion => "+list[i]);
-        
         list[i] = Number(list[i]);
-        
         //console.log("after conversion => "+list[i]);
-        
         if(!isNaN(list[i]))
             if(!isFloat(list[i]))
-             sum += list[i];
-        
+                sum += list[i];
         //console.log(sum);    
     }
     //console.log(sum);
     return sum;
 }
 
-//helpers functions 
+//-------------- helpers functions--------- //
 function isFloat(n){
     return Number(n) === n && n % 1 !== 0;
 }
 function notNull(n){
     return n !== null;
 }
-
+//-----------------------------------------//
 //init iteration function
 sum_list_string(list);
 
