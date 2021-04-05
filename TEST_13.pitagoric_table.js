@@ -4,9 +4,10 @@ function pitagoric_table(){
 
     for(i=0;i<col.length;i++){
         col[i] = new Array();
-        for(j=0;j<colonne.length;j++)
+        for(j=0;j<col.length;j++)
             col[i].push((i+1)*(j+1));
     }
+    console.table(col);
     return col;
 }
 pitagoric_table();
